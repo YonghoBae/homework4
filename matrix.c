@@ -16,14 +16,14 @@ int main(void){
     printf("A행렬의 크기를 입력해주세요.\n");
     scanf("%d %d",&A_row,&A_column);
     printf("B행렬의 크기를 입력해주세요.\n");
-    scanf("%d %d",&B_row,&B_column); //A,B의 크기 입력
+    scanf("%d %d",&B_row,&B_column); //A,B의 각각의 행과 열의 크기 입력
 
     A = (int**)malloc(A_row*sizeof(int*));
     B = (int**)malloc(B_row*sizeof(int*));
     Add = (int**)malloc(A_row*sizeof(int*));
     Sub = (int**)malloc(A_row*sizeof(int*));
     T = (int**)malloc(A_column*sizeof(int*));
-    Multi = (int**)malloc(A_row*sizeof(int*)); //모든 행렬의 행 생성
+    Multi = (int**)malloc(A_row*sizeof(int*)); //동적메모리할당으로 모든 행렬의 행 생성
 
     for(int i=0;i<A_row;i++){
         A[i] = (int*)malloc(A_column*sizeof(int));
@@ -34,7 +34,7 @@ int main(void){
     for(int i=0;i<B_row;i++)
         B[i] = (int*)malloc(B_column*sizeof(int));
     for(int i=0;i<A_column;i++)    
-        T[i] = (int*)malloc(A_row*sizeof(int));//모든 행렬의 열 생성
+        T[i] = (int*)malloc(A_row*sizeof(int));//동적메모리할당으로 모든 행렬의 열 생성
 
     printf("A행렬의 값을 입력해주세요.\n");
     for(int j=0;j<A_row;j++){
